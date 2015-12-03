@@ -173,6 +173,9 @@ public class FileSystemDocumentDao implements IDocumentDao {
             File f = new File(new File(path), META_DATA_FILE_NAME);
             OutputStream out = new FileOutputStream( f );
             props.store(out, "Document meta data");       
+            //out.flush();
+            out.close();
+            //f.close();
     }
     
     private List<String> getUuidList() {

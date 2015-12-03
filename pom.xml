@@ -7,21 +7,25 @@
     <artifactId>rest-document-archive</artifactId>
     <version>0.1.0</version>
 
+    <properties>
+        <start-class>org.murygin.archive.Application</start-class>
+        <spring.boot.version>1.1.6.RELEASE</spring.boot.version>
+        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <junit.version>4.11</junit.version>
+        <springfox.version>2.2.2</springfox.version>
+     </properties>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.1.6.RELEASE</version>
     </parent>
 
-    <properties>
-        <start-class>org.murygin.archive.Application</start-class>
-     </properties>
-
     <build>
         <plugins>
             <plugin> 
                 <artifactId>maven-compiler-plugin</artifactId> 
-                <version>2.3.2</version>
+                <version>${maven-compiler-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -34,7 +38,7 @@
     	<dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -46,8 +50,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox.version}</version>
+        </dependency>
     </dependencies>
 
+<!--
     <repositories>
         <repository>
             <id>spring-releases</id>
@@ -62,4 +77,5 @@
             <url>http://repo.spring.io/libs-release</url>
         </pluginRepository>
     </pluginRepositories>
+-->
 </project>
